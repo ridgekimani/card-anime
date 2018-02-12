@@ -1,0 +1,21 @@
+{
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "env": {
+        "jest": true,       
+        "mocha": true
+    },
+    "rules": {
+        "arrow-parens": 0,
+        "import/first": 1,
+        "no-unused-expressions": 1,        
+        "no-unused-vars": 1,
+        "no-use-before-define": 0,
+        "prefer-const": 1,
+        "prefer-destructuring": 1,       
+        "react/jsx-filename-extension": [ 1, { "extensions": [ ".js", ".jsx" ]}],
+        "react/no-unescaped-entities": 0,
+        "react/prop-types": 1,
+        "react/sort-comp": 0
+    }
+}

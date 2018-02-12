@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
-import {Card, Button } from 'react-native-elements';
+import { Card, Button } from 'react-native-elements';
 
 import Deck from './src/Deck';
 
@@ -22,26 +22,30 @@ const DATA = [
 
 
 export default class App extends Component {
-  
-  renderCard = (item) => {
-    return (
-      <Card
-        title={item.text}
-        image={{ uri: item.uri }}
-        key={item.id}
-      >
-        <Text style={{ marginBottom: 10 }}>
+  renderCard = (item) => (
+    <Card
+      title={item.text}
+      image={{ uri: item.uri }}
+    >
+      <Text style={{ marginBottom: 10 }}>
           I can customize the card further
-        </Text>
-        <Button icon={{ name: 'code' }} backgroundColor="#03A9F4" title="View Now"/>
-      </Card>
-    )
-  }
-  
+      </Text>
+      <Button icon={{ name: 'code' }} backgroundColor="#03A9F4" title="View Now" />
+    </Card>
+  )
+  renderNoMoreCards = () => (
+    <Card title="All Done">
+      <Text style={{ marginBottom: 10 }}>
+          There's no more cards here
+      </Text>
+      <Button icon={{ name: 'code' }} backgroundColor="#03A9F4" title="Get More!" />
+    </Card>
+  )
+
   render() {
     return (
       <View style={styles.container}>
-        <Deck data={DATA} renderCard={this.renderCard} />
+        <Deck data={DATA} renderCard={this.renderCard} renderNoMoreCards={this.renderNoMoreCards} />
       </View>
     );
   }
